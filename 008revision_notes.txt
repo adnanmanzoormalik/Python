@@ -1,0 +1,222 @@
+1. Variables 📦
+Variables store values.
+name = "Adnan"
+age = 20
+A variable's value can be changed:
+age = 20
+age = age + 1
+
+print(age)  # 21
+Important points
+Python is case-sensitive: age and Age are different.
+Variable names cannot start with a number.
+Use descriptive names and preferably snake_case.
+first_name = "Adnan"
+total_price = 500
+Multiple assignment
+name, age = "Adnan", 20
+Swapping variables
+a = 10
+b = 20
+
+a, b = b, a
+2. Data Types 🔢
+A data type tells Python what kind of value something is.
+name = "Adnan"       # str
+age = 20             # int
+price = 99.99        # float
+is_student = True    # bool
+result = None        # NoneType
+Main types
+Type	Meaning	Example
+str	Text	"Hello"
+int	Whole number	20
+float	Decimal number	20.5
+bool	True or False	True
+NoneType	No value	None
+Check a data type
+print(type(age))
+Type conversion
+number = int("20")
+price = float("99.5")
+text = str(20)
+Important difference
+"20"  # String
+20    # Integer
+3. Operators ➕➖
+Operators perform operations.
+Arithmetic operators
++   Addition
+-   Subtraction
+*   Multiplication
+/   Division
+//  Floor division
+%   Remainder
+**  Power
+Example:
+print(10 % 3)   # 1
+print(2 ** 3)   # 8
+Assignment operators
+x = 10
+x += 5
+x -= 3
+x *= 2
+x /= 2
+Comparison operators
+These return True or False.
+==   Equal to
+!=   Not equal to
+>    Greater than
+<    Less than
+>=   Greater than or equal to
+<=   Less than or equal to
+⚠️ Important:
+=    # Assign
+==   # Compare
+Logical operators
+and
+or
+not
+Example:
+if age >= 18 and age <= 25:
+    print("Valid")
+Operator precedence
+Python generally follows:
+()
+**
+* / // %
++ -
+comparisons
+not
+and
+or
+Use parentheses when you want to control the order.
+result = (10 + 5) * 2
+4. Input and Output ⌨️
+Output with print()
+print("Hello")
+print(age)
+Print multiple values
+print("My name is", name)
+f-strings ⭐
+print(f"My name is {name} and I am {age} years old")
+You can also perform calculations inside:
+print(f"Next year I will be {age + 1}")
+User input
+name = input("Enter your name: ")
+Important: input() returns a string
+age = input("Enter age: ")
+Even if the user enters 20, Python stores it as:
+"20"
+Convert input to a number
+age = int(input("Enter your age: "))
+price = float(input("Enter price: "))
+print() options
+print("A", "B", sep="-")
+Output:
+A-B
+print("Hello", end=" ")
+print("World")
+Output:
+Hello World
+5. Conditionals 🤔
+Conditionals allow your program to make decisions.
+if
+if age >= 18:
+    print("Adult")
+if-else
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+if-elif-else
+if marks >= 90:
+    print("A")
+elif marks >= 75:
+    print("B")
+else:
+    print("C")
+Important rules
+Use : after conditions.
+Use proper indentation (usually 4 spaces).
+Python checks conditions from top to bottom.
+Once a condition in an if/elif/else chain is True, the remaining conditions are skipped.
+Nested if
+if age >= 18:
+    if has_license:
+        print("Can drive")
+match-case (Switch-like statements)
+Python 3.10+ supports:
+match day:
+    case 1:
+        print("Monday")
+    case 2:
+        print("Tuesday")
+    case _:
+        print("Invalid")
+case _ works like a default case.
+6. Loops 🔁
+Loops repeat code.
+for loops
+for i in range(5):
+    print(i)
+Output:
+0
+1
+2
+3
+4
+range()
+range(5)         # 0 to 4
+range(1, 6)      # 1 to 5
+range(0, 10, 2)  # 0, 2, 4, 6, 8
+The stop value is excluded.
+Backwards
+for i in range(10, 0, -1):
+    print(i)
+Looping through a string
+for letter in "Python":
+    print(letter)
+while loops
+A while loop continues while its condition is True.
+i = 1
+
+while i <= 5:
+    print(i)
+    i += 1
+⚠️ Make sure the condition eventually becomes False, otherwise you'll create an infinite loop.
+break
+Stops the entire loop:
+for i in range(10):
+    if i == 5:
+        break
+
+    print(i)
+continue
+Skips the current iteration:
+for i in range(5):
+    if i == 3:
+        continue
+
+    print(i)
+Nested loops
+A loop inside another loop:
+for i in range(3):
+    for j in range(3):
+        print(i, j)
+else with loops
+for i in range(3):
+    print(i)
+else:
+    print("Loop finished")
+The else block does not run if the loop is terminated using break.
+7. do...while Loops
+Python has no built-in do...while loop.
+However, you can simulate one using:
+while True:
+    # This runs at least once
+
+    if condition:
+        break
+
+
