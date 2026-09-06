@@ -1,4 +1,3 @@
-def greet_student(name, greet="Hello", *points, **marks):
-    print(greet, name)
-    print(f"You have {points} points and {marks} marks")
-greet_student("Adnan", "Good Morning", 1,2,3,4, eng=90, maths=91)
+numbers = [1,2,3,4,5,6,7,8,9,10]
+cube = list(map(lambda x: x*x*x, numbers))
+print(cube)
