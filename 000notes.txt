@@ -19,4 +19,6 @@ OOPs
 
 #WHAT TO LEARN LATER
 mutablity and immutablity
-
+sets accepting mutable or immutable objs and what is hashable
+ternary operator
+is operator
