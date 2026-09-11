@@ -106,6 +106,13 @@ Hi How can I help you?
 obj = Atm()
 # print(type(obj))
 
+
+#we can represent a class using a diagram
+# NOTE: learn this
+
+
+
+         
  
 
 
