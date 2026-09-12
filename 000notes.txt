@@ -23,3 +23,5 @@ sets accepting mutable or immutable objs and what is hashable
 ternary operator
 is operator
 class diagrams basics
+diamond problem inheritance
+ternary operator
