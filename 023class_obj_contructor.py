@@ -1,6 +1,6 @@
 # Python Day 4 Part 1 Classes, objects, constructors, reference variable
 
-#class >>> blueprint of an object >>> we used PascalCase naming convention for classes
+#class >>> blueprint of an object >>> we used PascalCase naming convention for classes like Student, CarDetails, AdnanManzoor
 class Student:
     pass
 

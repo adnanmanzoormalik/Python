@@ -19,6 +19,63 @@ encapsulation
 abstraction 
 magic methods
 
+{{{{{{
+Part 2 — OOP Fundamentals
+
+11. Encapsulation
+
+* What encapsulation means
+* Public attributes
+* Protected convention _variable
+* Private attributes __variable
+* Name mangling
+* Getters and setters
+* @property
+
+12. Inheritance
+
+* What inheritance is
+* Parent/base class
+* Child/derived class
+* Single inheritance
+* Multilevel inheritance
+* Multiple inheritance
+* Hierarchical inheritance
+* Hybrid inheritance
+* super()
+* Method overriding
+* Constructor inheritance
+
+13. Polymorphism
+
+* What polymorphism means
+* Method overriding
+* Duck typing
+* Operator overloading
+* Common magic/dunder methods:
+    * __str__
+    * __len__
+    * __add__
+    * __eq__
+    * etc.
+
+14. Abstraction
+
+* What abstraction means
+* Abstract classes
+* ABC
+* @abstractmethod
+* Abstract methods
+* Why abstraction is useful
+
+}}}}}}
+
+STATIC methods
+
+
+Day 5
+
+
 
 
 
