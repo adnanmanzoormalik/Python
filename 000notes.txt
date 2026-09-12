@@ -12,7 +12,12 @@ Day 3 Part 3
 iterators, generators
 
 Day 4
-OOPs
+Classes, objects, constructors
+inheritance
+polymorphism
+encapsulation
+abstraction 
+magic methods
 
 
 
