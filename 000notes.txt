@@ -87,3 +87,4 @@ is operator
 class diagrams basics
 diamond problem inheritance
 ternary operator
+MRO and super()
