@@ -39,7 +39,7 @@ dog.eat() #this ll execute the child's eat()
 # Python doesn’t support traditional method overloading in the same way as languages like Java/C++.
 
 
-#super(): used inside a child class to access methods or attributes from its parent class.
+#super(): used inside a child class to access methods from its parent class.
 
 class Animal:
     def sound(self):
