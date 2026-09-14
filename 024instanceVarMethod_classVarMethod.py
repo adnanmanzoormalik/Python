@@ -130,6 +130,24 @@ car1.get_details(car1)
 
 
 
+#static methods >>> A static method is a method defined inside a class that does not receive self or cls automatically.
+class Calculator:
+    @staticmethod
+    def add(a,b):
+        print(a+b)
+
+#NOTE: If the method doesn’t need an object or class, why not simply create a normal function? The reason is mainly organization and logical grouping. If add() is logically related to Calculator, putting it inside the class makes that relationship clear.
+#Static Methods Cannot Directly Access Instance Attributes or Class Attributes>>> if it needs access it has to go through a method
+#ways to call a static method:
+Calculator.add(4,5)
+c1 = Calculator()
+c1.add(1,2)
+
+#static method can take self as an argument but it is not necessary and is used only when we necessarily need to pass the obj as an argument
+
+
+
+
 #Q1 — Basic OOP Create a class called Employee with: * A class attribute company = "TechCorp * A constructor that accepts name and salary * Instance attributes name and salary * An instance method display() that prints the employee’s name, salary, and company Then: 1. Create two objects: * Adnan, 50000 * Rahul, 60000 2. Call display() for both objects.
 
 class Employee:
