@@ -1,5 +1,5 @@
-#MAGIC METHODS >>> becoz we dont usually directly call them
-#like when we do print(10) is works as 10.__str__()
+#MAGIC METHODS >>> becoz we dont usually directly call them they can be called using +, _, *, /, //, is, print() etc etc
+#like when we do print(10) is works as 10.__str__() 
 #__init__ __add__ __sub__ __len__ __eq__
 #also called as dunder methods becoz they have double underscore
 
@@ -9,7 +9,7 @@
 class Person:
     def __init__(self):
         pass
-# __new__() creates the object
+# __new__() creates the object >>> p = Person() is same as p = Person.__new__(Person)
 # __init__() initializes the object
 
 
