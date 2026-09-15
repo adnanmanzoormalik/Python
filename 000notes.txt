@@ -73,7 +73,274 @@ Part 2 — OOP Fundamentals
 STATIC methods
 
 
-Day 5
+DAY 5 
+Part 1
+Closures, Decorators
+
+Part 2
+Exceptions, Context Managers
+
+Part 3
+Modules → Packages → Dataclasses
+
+
+1. Closures
+Nested functions
+Inner function
+Outer function
+Lexical scope
+nonlocal keyword
+What makes a function a closure
+Returning a function
+Closures with parameters
+Closures vs normal nested functions
+Practical use cases of closures
+2. Decorators
+Functions as first-class objects
+Passing functions as arguments
+Returning functions
+Basic decorator structure
+@decorator syntax
+Decorators with arguments
+*args and **kwargs in decorators
+Returning values from decorated functions
+Multiple decorators
+Decorator execution order
+functools.wraps
+Function metadata: __name__, __doc__
+Practical decorators
+Logging
+Timing
+Authentication/authorization
+Validation
+Permission checking
+⭐ Important relationship
+Nested Function
+      ↓
+Closure
+      ↓
+Functions as Objects
+      ↓
+Decorator
+      ↓
+@decorator syntax
+🔹 Part 2 — Exceptions & Context Managers
+3. Exceptions
+Basics
+What is an exception?
+Syntax errors vs exceptions
+Common built-in exceptions
+ValueError
+TypeError
+IndexError
+KeyError
+NameError
+ZeroDivisionError
+FileNotFoundError
+AttributeError
+Exception Handling
+try
+except
+else
+finally
+Multiple except blocks
+Catching multiple exceptions
+Exception hierarchy
+Exception base class
+Raising Exceptions
+raise
+Raising built-in exceptions
+Custom error messages
+Custom Exceptions
+Creating custom exception classes
+Inheriting from Exception
+Using custom exceptions
+Advanced
+Exception as e
+Re-raising exceptions
+Exception chaining
+raise ... from ...
+assert
+Good exception-handling practices
+4. Context Managers
+Basics
+What is a context manager?
+Why context managers are needed
+with statement
+Automatic resource cleanup
+Built-in Context Managers
+File handling with with open()
+Multiple context managers
+Creating Context Managers
+__enter__()
+__exit__()
+Context manager class
+Returning values from __enter__
+Handling exceptions inside __exit__
+Function-Based Context Managers
+contextlib
+@contextmanager
+yield inside context managers
+Practical Uses
+File handling
+Database connections
+Locks
+Resource management
+Temporary changes/settings
+⭐ Important relationship
+try/finally
+    ↓
+with statement
+    ↓
+__enter__ / __exit__
+    ↓
+contextlib
+    ↓
+@contextmanager
+🔹 Part 3 — Modules → Packages → Dataclasses
+5. Modules
+Basics
+What is a module?
+Creating your own module
+import
+from ... import
+import ... as
+Aliases
+Built-in modules
+Third-party modules
+User-defined modules
+Important concepts
+dir()
+help()
+__name__
+__main__
+if __name__ == "__main__":
+Module Search
+sys.path
+Python module search path
+Import behavior
+Circular imports
+Useful Standard Library Modules
+math
+random
+datetime
+os
+sys
+json
+6. Packages
+Basics
+What is a package?
+Module vs package
+Package structure
+__init__.py
+Importing from packages
+Nested packages
+Package Imports
+import package.module
+from package import module
+from package.module import function
+Advanced
+Relative imports
+Absolute imports
+Package organization
+__all__
+Installing third-party packages with pip
+⭐ Structure
+project/
+│
+├── main.py
+│
+└── package/
+    ├── __init__.py
+    ├── math_utils.py
+    └── string_utils.py
+7. Dataclasses
+Basics
+What is a dataclass?
+Why dataclasses?
+@dataclass
+Defining fields
+Creating objects
+Automatic __init__()
+Automatic __repr__()
+Automatic __eq__()
+Fields
+Type annotations
+Default values
+field()
+default_factory
+Mutable default values
+Advanced
+Frozen dataclasses
+frozen=True
+ClassVar
+InitVar
+__post_init__()
+field() options
+Comparing dataclasses
+Ordering
+Inheritance with dataclasses
+Converting dataclass to dictionary
+asdict()
+Converting dataclass to tuple
+astuple()
+replace()
+Example progression
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+↓
+from dataclasses import dataclass
+
+@dataclass
+class Student:
+    name: str
+    age: int
+🎯 Recommended Learning Order
+I recommend we don't study all subtopics at once. We'll go one by one.
+Part 1
+1. Nested Functions
+2. Closures
+3. nonlocal
+4. Functions as First-Class Objects
+5. Basic Decorators
+6. @decorator syntax
+7. Decorators with *args/**kwargs
+8. Multiple Decorators
+9. functools.wraps
+10. Practical Decorators
+Part 2
+11. Exceptions
+12. try/except
+13. else/finally
+14. Multiple Exceptions
+15. raise
+16. Custom Exceptions
+17. Exception Hierarchy
+18. Exception Chaining
+19. Context Managers
+20. with statement
+21. __enter__ / __exit__
+22. contextlib
+23. @contextmanager
+Part 3
+24. Modules
+25. import / from import
+26. __name__ / __main__
+27. sys.path
+28. Packages
+29. __init__.py
+30. Absolute & Relative Imports
+31. Dataclasses
+32. Fields & Defaults
+33. field() / default_factory
+34. __post_init__()
+35. frozen dataclasses
+36. asdict(), astuple(), replace()
+37. Dataclass inheritance
+For your Day 5, I'd start with Nested Functions → Closures first. Once closures are solid, decorators become much easier to understand rather than memorizing the @ syntax.
+
 
 
 

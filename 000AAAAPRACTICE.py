@@ -1,6 +1,10 @@
-class Car:
-    def start(self):
-        print("started")
+def multiplier(x):
 
-car = Car.__new__(Car)
-car.start()
+    def multiply(y):
+        return x * y
+
+    return multiply
+
+double = multiplier(2)
+a = double(2)
+print(a)
