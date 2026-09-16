@@ -298,7 +298,6 @@ class Student:
     name: str
     age: int
 🎯 Recommended Learning Order
-I recommend we don't study all subtopics at once. We'll go one by one.
 Part 1
 1. Nested Functions
 2. Closures
