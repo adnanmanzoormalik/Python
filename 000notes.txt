@@ -359,3 +359,5 @@ class diagrams basics
 diamond problem inheritance
 ternary operator
 MRO and super()
+decorators >>> https://www.youtube.com/watch?v=ZEKiIwWv9nM
+decorator factory

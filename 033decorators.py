@@ -178,3 +178,221 @@ def add(a,b, type):
 add(1, 2, type="Integer")
 
 
+#returning value from a wrapper
+def decorator(func):
+    def wrapper():
+        print("Before function")
+        result = func()
+        print("after function " + result)
+        return result
+    return wrapper
+
+@decorator
+def greet():
+    return "Hello"
+
+result = greet()
+print(result)
+
+
+print()
+
+#MULTIPLE DECORATORS >>> we can apply more than one decorator to a function
+def decorator1(func):
+    def wrapper():
+        print("Decorator 1")
+        return func()
+    return wrapper
+
+def decorator2(func):
+    def wrapper():
+        print("Decorator 2")
+        return func()
+    return wrapper
+
+@decorator1
+@decorator2
+def greet():
+    return "Hello"
+
+a = greet()
+print(a)
+
+
+
+
+print()
+
+
+#EXAMPLE >>> EXECUTION ORDER
+
+def dec1(func):
+    print("This is dec 1")
+    def wrapper1():
+        print("This is wrapper 1 start")
+        result = func()
+        print("This is wrapper 1 end")
+        return result
+    return wrapper1
+
+
+
+#IMPORTANT EXAMPLE
+def dec2(func):
+    print("This is dec 2")
+    def wrapper2():
+        print("This is wrapper 2 start")
+        result = func()
+        print("This is wrapper 2 end")
+        return result
+    return wrapper2
+
+@dec1 #this basically means dec1(dec2(greet))
+@dec2
+def greet():
+    "This is greet function"
+    print("Hello")
+    return True
+
+print(greet())
+
+
+
+print()
+
+
+
+def dec(func_arg):
+    def wrap():
+        "This is wrapper()" #docstring
+        print("Wrapper")
+        result = func_arg()
+        return result
+    return wrap
+
+@dec
+def func():
+    "This is func()" #docstring
+    return "Function"
+a = func()
+print(a)
+
+
+#FUNCTION METADATA
+# function.__name__ >>> this will return name of function
+# function.__doc__  >>> this will return docstring of the function
+
+print(func.__name__) #this will return wrap becoz after decoration func() becomes the wrapper class 
+print(func.__doc__) #this will return "This is wrapper"
+
+
+#functools.wraps
+#When you decorate a function, you generally want the decorated function to look like the original function from the outside. That’s what functools.wraps helps us achieve.
+
+from functools import wraps
+
+def decorator(func):
+
+    @wraps(func) #wraps is a decorator and we are using it decorate our wrapper
+                 #so it tells python that this is a wrapper func so preserve the metadata from the function
+    def wrapper():
+        return func()
+    
+    return wrapper
+
+@decorator
+def greet():
+    "This is docstring of greet()"
+    print("This is greet()")
+
+greet()
+
+print(greet.__name__)
+print(greet.__doc__)
+
+
+print()
+
+#__________EXAMPLES__________
+
+#logging >>> means recording info about our function, useful when debugging applications
+
+def log_function(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        print(f"calling ... {func.__name__}")
+        print(f"args recieved: {args}")
+        print(f"Keyword args: {kwargs}")
+        result = func(*args, **kwargs)
+        print(f"Returned: {result}")
+    return wrapper
+
+@log_function
+def add(a, b):
+    return a+b
+
+add(1, 2)
+
+
+
+
+
+print()
+#timing decorator
+import time
+from functools import wraps
+
+
+def time_counter(func):
+    @wraps(func)
+    def wrapper():
+        start = time.time()
+        result = func()
+        end = time.time()
+        print(f"Time taken to complete {func.__name__} = {end - start:.4f} seconds")
+        return result
+    return wrapper
+@time_counter
+def timing():
+    time.sleep(2)
+    print("timing function")
+
+timing()
+
+#timing functions are useful when we have to call APIs or work with database queries etc
+
+
+
+#authentication decorator
+from functools import wraps
+current_user = None
+
+def login(username):
+    global current_user
+    current_user = username
+
+def authenticate(func):
+
+    @wraps(func)
+    def wrapper():
+        if current_user is None:
+            print("User doesnt exist")
+            return None
+        else:
+            return func()
+    return wrapper
+
+@authenticate
+def dashboard():
+    print("Welcome to the dashboard")
+
+dashboard()
+print()
+login("Adnan")
+dashboard()
+
+
+
+
+
+
