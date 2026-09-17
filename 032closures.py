@@ -1,6 +1,6 @@
 #CLOSURE >>> A closure is a function that retains access to variables from its enclosing scope even after the enclosing function has finished executing.
 
-#nested functions >>> do a few related subtopics in one go then a few more
+#nested functions >>> function inside a function
 
 def outer():
     def inner(): #only defining a function doesnt call it 
@@ -117,7 +117,7 @@ def outer():
 
     # return inner() >>> this will call the function and return whatever the inner() returns
 
-x = outer() #>>> this was we can call the outer() and store inner in x
+x = outer() #>>> this way we can call the outer() and store inner in x
 x() #this will call inner
 print(id(x)) #this will be same as inner
 
@@ -166,4 +166,69 @@ quad = multiplier(4)
 print(double(123))
 print(quad(6))
 
-# >>> study from 11 onwards
+
+# >>> closure with non local
+def counter():
+    count = 0
+    def increment():
+        nonlocal count 
+        count += 1 #if we dont use nonlocal this will create a new count variable and use that
+        return count
+    return increment
+a = counter()
+print(a())
+
+
+
+
+#EXAMPLE exponent
+def power(exponent):
+    def calculate(number):
+        number = number**exponent
+        return number
+    return calculate
+
+square = power(2)
+cube = power(3)
+
+print(square(2))
+print(cube(2))
+
+print(square.__closure__)
+print(square.__closure__[0].cell_contents)
+print(cube.__closure__[0].cell_contents)
+
+
+#data hiding using closure
+def account():
+    balance = 1000
+    def get_balance():
+        return balance
+    return get_balance
+bal = account()
+print(bal())
+
+
+#validation
+def valid_password():
+    def length_check(password):
+        return len(password) >= 8
+    return length_check
+password_checker = valid_password()
+print(password_checker("12345678"))
+print(password_checker("2351hbt"))
+
+
+
+#NOTE: Every closure function is a nested function but every nested function is not a closure function
+
+#USES OF CLORSURE FUNCTIONS
+# 1. function factory >>> like we created multiplier or power
+# 2. maintaining state >>> like we created a counter
+# 3. data hiding >>> like account and balance
+# 4. validation >>> like password_checker
+
+
+#closure vs class
+pass
+

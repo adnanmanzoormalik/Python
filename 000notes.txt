@@ -73,6 +73,11 @@ Part 2 — OOP Fundamentals
 STATIC methods
 
 
+
+
+
+
+
 DAY 5 
 Part 1
 Closures, Decorators
