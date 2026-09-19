@@ -218,13 +218,16 @@ class InvalidAmountError(BankError):
     pass
 
 amount = -500
+withdraw = 1000
 
 try:
 
     if amount <= 0:
         raise InvalidAmountError("Amount must be greater than zero")
+    if withdraw > amount:
+        raise InsufficientBalanceError("Amount cant be greater than balance")
 
-except InvalidAmountError as e:
+except BankError as e:
     print("Error:", e)
 
 
