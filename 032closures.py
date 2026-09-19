@@ -195,7 +195,7 @@ print(square(2))
 print(cube(2))
 
 print(square.__closure__)
-print(square.__closure__[0].cell_contents)
+print(square.__closure__[0].cell_contents) #__closure__ is where Python hides the saved memory, and .cell_contents lets you peek at what is actually stored inside it.
 print(cube.__closure__[0].cell_contents)
 
 
