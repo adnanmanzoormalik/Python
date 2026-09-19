@@ -134,7 +134,7 @@ Decorator
 
 Part 2 Exceptions & Context Managers
 Phase 1: Basic ExceptionsSyntax Errors vs. ExceptionsWhat is an Exception?The try and except BlocksCommon Built-in Exceptions:ValueErrorTypeErrorIndexErrorKeyErrorNameErrorZeroDivisionErrorFileNotFoundErrorAttributeError
-Phase 2: Intermediate ExceptionsMultiple except BlocksCatching Multiple Exceptions in One LineThe Exception as e SyntaxThe else BlockThe finally BlockThe raise StatementCustom Error Messages
+Phase 2: Intermediate ExceptionsMultiple except BlocksCatching Multiple Exceptions in One LineThe Exception as e SyntaxThe else BlockThe finally BlockThe raise Statement Custom Error Messages
 Phase 3: Basic Context ManagersWhat is a Context Manager?Why Context Managers are NeededThe with StatementAutomatic Resource CleanupFile Handling with with open()
 Phase 4: Intermediate Context ManagersThe Relationship between try/finally and withManaging Multiple Context Managers
 

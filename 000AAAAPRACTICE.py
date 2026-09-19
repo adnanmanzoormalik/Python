@@ -1,23 +1,10 @@
-from functools import wraps
-def log(func):
-    @wraps(func)
-    def wrapper():
-        print("Processing...")
-        func()
-        print("Processing ended\n")
-    return wrapper
+try:
+    amount = int(input("Enter amount: "))
+    denom = int(input("Enter denom: "))
+    print(amount/denom)
 
-@log
-def login():
-    "This is login()"
-    print("Logged in")
+except ValueError:
+    print("Enter correct value.")
 
-@log
-def logout():
-    print("Logged out")
-
-login()
-logout()
-
-print(login.__name__)
-print(login.__doc__)
+except ZeroDivisionError:
+    print("Cant divide by zero")
