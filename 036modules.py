@@ -34,7 +34,7 @@ print(cal.add(4,6))
 
 #Different types of modules
 
-# 1. Built-in / Standard Library Modules >>> this is provided by python e.g math, datetime, random, json etc etc
+# 1. Built-in / Standard Library Modules >>> this is provided by python e.g math, datetime, random, json os, sys etc etc
 import random
 print(random.randint(1,10))
 
@@ -71,7 +71,7 @@ print(calculator_036.add(1,2))
 #Module Search Path — sys.path
 import calculator_036 #when we write this python searches through a list of directories called: sys.path Python searches locations in sys.path. If the directory containing calculator.py is available in the search path, Python can find it. If Python can’t find the module, you’ll get: ModuleNotFoundError
 import sys
-print(sys.path) #useful when you’re trying to understand where Python looks for modules.
+print(sys.path) #useful when you’re trying to understand where Python looks for modules. pythons search path
 
 
 
