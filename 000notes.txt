@@ -148,6 +148,286 @@ Phase 5: Intermediate DataclassesThe issue with mutable default valuesUsing fiel
 
 
 
+DAY 6
+│
+├── PART 1 — DATA INPUT & STORAGE
+│   │
+│   ├── Phase 1: File Handling
+│   ├── Phase 2: CSV
+│   └── Phase 3: JSON
+│
+├── PART 2 — GETTING & CLEANING DATA
+│   │
+│   ├── Phase 4: APIs
+│   └── Phase 5: Regular Expressions
+│
+└── PART 3 — PROFESSIONAL PYTHON
+    │
+    ├── Phase 6: Logging
+    ├── Phase 7: Virtual Environments
+    └── Phase 8: Debugging
+
+
+PYTHON DAY 6 — DATA ANALYSIS FOCUSED
+
+Main Goal: Python for Data Analysis
+
+DAY 6 STRUCTURE
+
+PART 1 — DATA INPUT & STORAGE
+Priority: ⭐⭐⭐⭐⭐
+
+PHASE 1 — FILE HANDLING
+Basics → Advanced
+
+1. What is File Handling?
+2. File Paths
+3. open()
+4. File Modes
+   - r
+   - w
+   - a
+   - x
+   - rb
+   - wb
+5. Reading Files
+   - read()
+   - readline()
+   - readlines()
+6. Writing to Files
+7. Appending to Files
+8. with open()
+9. Working with Multiple Files
+10. os Module Basics
+11. pathlib Module Basics
+12. File and Directory Operations
+13. File Encoding
+14. Handling File-Related Exceptions
+15. Processing Large Files
+16. Line-by-Line File Processing
+
+
+PHASE 2 — CSV
+Basics → Advanced
+
+1. What is CSV?
+2. csv Module
+3. csv.reader()
+4. csv.writer()
+5. csv.DictReader()
+6. csv.DictWriter()
+7. Reading CSV Rows
+8. Writing CSV Rows
+9. Headers
+10. Delimiters
+11. quotechar
+12. Handling Missing/Empty Values
+13. Filtering CSV Data
+14. Updating CSV Data
+15. CSV → Python Data Structures
+16. Python Data Structures → CSV
+17. Working with Large CSV Files
+
+
+PHASE 3 — JSON
+Basics → Advanced
+
+1. What is JSON?
+2. JSON Structure
+3. JSON vs Python Objects
+4. json.load()
+5. json.loads()
+6. json.dump()
+7. json.dumps()
+8. JSON Objects
+9. JSON Arrays
+10. Nested JSON
+11. Lists of Dictionaries
+12. Reading JSON Files
+13. Writing JSON Files
+14. JSON → Python
+15. Python → JSON
+16. Handling JSON Errors
+17. Processing API-Style JSON
+
+
+PART 2 — GETTING & CLEANING DATA
+Priority: ⭐⭐⭐⭐⭐
+
+PHASE 4 — APIs
+Basics → Intermediate
+
+1. What is an API?
+2. Client vs Server
+3. Request and Response
+4. HTTP Basics
+5. URL
+6. Endpoint
+7. Parameters
+8. Headers
+9. HTTP Status Codes
+10. JSON Responses
+
+Python + APIs
+
+11. requests Module
+12. GET Requests
+13. POST Requests
+14. Query Parameters
+15. Headers
+16. Request Body
+17. response.json()
+18. response.text
+19. response.status_code
+20. response.headers
+
+Error Handling
+
+21. HTTP Errors
+22. Timeouts
+23. Connection Errors
+24. Invalid Responses
+25. try/except with APIs
+
+Data Analysis Applications
+
+26. Getting Datasets from APIs
+27. Extracting JSON Data
+28. Handling Nested JSON
+29. Converting API Responses into Python Data
+30. Preparing API Data for Pandas
+31. Pagination
+32. API Authentication Basics
+33. API Rate Limits
+
+
+PHASE 5 — REGULAR EXPRESSIONS
+Basics → Intermediate
+
+1. What is Regular Expression?
+2. re Module
+3. Raw Strings
+4. search()
+5. match()
+6. findall()
+7. finditer()
+8. sub()
+9. split()
+
+Regex Patterns
+
+10. Literal Characters
+11. .
+12. ^
+13. $
+14. *
+15. +
+16. ?
+17. {n}
+18. {n,m}
+
+Character Classes
+
+19. []
+20. [^]
+21. \d
+22. \D
+23. \w
+24. \W
+25. \s
+26. \S
+
+Groups
+
+27. Capturing Groups
+28. Non-Capturing Groups
+29. ()
+30. Named Groups
+
+Data Analysis Applications
+
+31. Email Extraction
+32. Phone Number Extraction
+33. URL Extraction
+34. Date Extraction
+35. ID Extraction
+36. Whitespace Cleaning
+37. Text Extraction
+38. Data Validation
+39. Cleaning Messy Text Data
+
+
+PART 3 — PROFESSIONAL PYTHON
+Priority: ⭐⭐⭐⭐
+
+PHASE 6 — LOGGING
+Basics → Intermediate
+
+1. What is Logging?
+2. Why Use Logging?
+3. logging Module
+4. basicConfig()
+5. Log Levels
+   - DEBUG
+   - INFO
+   - WARNING
+   - ERROR
+   - CRITICAL
+6. Logging Messages
+7. Logging to Files
+8. Log Formatting
+9. Timestamps
+10. Logging Exceptions
+11. Logging in Data Processing Scripts
+12. Using Logs for Debugging
+
+
+PHASE 7 — VIRTUAL ENVIRONMENTS
+Basics → Intermediate
+
+1. What is a Virtual Environment?
+2. Why Use Virtual Environments?
+3. Global vs Project Packages
+4. venv
+5. Creating a Virtual Environment
+6. Activating a Virtual Environment
+7. Deactivating a Virtual Environment
+8. pip
+9. Installing Packages
+10. Uninstalling Packages
+11. requirements.txt
+12. Creating requirements.txt
+13. Installing from requirements.txt
+14. Virtual Environments for Data Analysis Projects
+
+
+PHASE 8 — DEBUGGING
+Basics → Intermediate
+
+1. What is Debugging?
+2. Syntax Errors
+3. Runtime Errors
+4. Logical Errors
+5. Reading Tracebacks
+6. Finding the Actual Error Line
+7. print() Debugging
+8. pdb
+9. Breakpoints
+10. Step Over
+11. Step Into
+12. Step Out
+13. Inspecting Variables
+14. Debugging Functions
+15. Debugging File Operations
+16. Debugging API Calls
+17. Debugging Data Processing Scripts
+18. Debugging Data Type Problems
+19. Debugging Missing Data
+20. Debugging Unexpected Results
+
+
+
+
 
 
 #WHAT TO LEARN LATER
