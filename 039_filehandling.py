@@ -1,135 +1,143 @@
-# # FILE HANDLING: File handling means using Python to create, read, write, modify, and manage files stored on your computer. python can work on files like .txt, .csv, .json, .log, .dat
+# FILE HANDLING: File handling means using Python to create, read, write, modify, and manage files stored on your computer. python can work on files like .txt, .csv, .json, .log, .dat
 
-# #variables can store data temporarily (till the program runs) while files can store data permenantly
+#variables can store data temporarily (till the program runs) while files can store data permenantly
 
-# #File Path >>> tells python where a file is located
-# # there are 2 main types >>> 1. Relative path 2. Absolute path
+#File Path >>> tells python where a file is located
+# there are 2 main types >>> 1. Relative path 2. Absolute path
 
-# #Relative path >>> where a file is located as relative to the current python programs location e.g "035data.txt" (same folder as the python file) or "calculator/advance.py"
-# # open("035data.txt", "r")
+#Relative path >>> where a file is located as relative to the current python programs location e.g "035data.txt" (same folder as the python file) or "calculator/advance.py"
+# open("035data.txt", "r")
 
-# #Absolute path >>> complete location of the file "C:\Users\Adnan\Documents\data.txt"
-# # open("~Adnan/Documents/data.txt", "r")
+#Absolute path >>> complete location of the file "C:\Users\Adnan\Documents\data.txt"
+# open("~Adnan/Documents/data.txt", "r")
 
-# #NOTE: Relative paths are generally more portable than hard-coded absolute paths.
-
-
-# #open() >>> used to open a file
-# file1 = open("039_data.txt","r")
-# data = file1.read()
-# print(data)
-# file1.close()
-
-# #File modes >>> r - read, w - write, a - append, x - create, rb - read binary, wb - write binary
+#NOTE: Relative paths are generally more portable than hard-coded absolute paths.
 
 
-# # r -> read >>> used to read an existing file
-# file1 = open("039_data.txt","r")
-# data = file1.read()
-# print(data)
-# file1.close()
+#open() >>> used to open a file
+file1 = open("039_data.txt","r")
+data = file1.read()
+print(data)
+file1.close()
 
-# try:
-#     file2 = open("data.txt", "r") #>>> this will throw an error since the file doesnt exist
-# except Exception as e:
-#     print(e)
+#File modes >>> r - read, w - write, a - append, x - create, rb - read binary, wb - write binary
 
 
+# r -> read >>> used to read an existing file
+file1 = open("039_data.txt","r")
+data = file1.read()
+print(data)
+file1.close()
 
-# # w -> write >>> used to write on a file >>> will replace eveything on the file and overwrites with the new content and if the new_file doesnt exist it will create a new file
-
-# file = open("039_data.txt", "w")
-# file.write("This is being written from python program")
-# file.close()
-
-# file3 = open("039_new_file.txt", "w")
-# file3.write("Hello new_file")
-# file3.close()
-
-# # a - append >>> Adds data to the end of an existing file.
-# file = open("039_data.txt", "a") #can create a new file if the file doesnt exist
-# file.write("\nThis is new line appended by python program")
-# file.close()
+try:
+    file2 = open("data.txt", "r") #>>> this will throw an error since the file doesnt exist
+except Exception as e:
+    print(e)
 
 
-# # x - creates a new file and if the file already exists it ll throw and error
-# try:
-#     file = open("039_data3.txt","x")
-# except Exception as e:
-#     print(e)
+# w -> write >>> used to write on a file >>> will replace eveything on the file and overwrites with the new content and if the new_file doesnt exist it will create a new file
+
+file = open("039_data.txt", "w")
+file.write("This is being written from python program")
+file.close()
+
+file3 = open("039_new_file.txt", "w")
+file3.write("Hello new_file")
+file3.close()
+
+# a - append >>> Adds data to the end of an existing file.
+file = open("039_data.txt", "a") #can create a new file if the file doesnt exist
+file.write("\nThis is new line appended by python program")
+file.close()
 
 
-# # rb, wb _ read binary, write binary >>> used for images, pdfs, audios etc
+# x - creates a new file and if the file already exists it ll throw and error
+try:
+    file = open("039_data3.txt","x")
+except Exception as e:
+    print(e)
 
 
-
-# #Reading files
-# #python provides three ways for this
-
-# #read() >>> reads the entire file
-# file = open("039_data.txt", "r")
-# print(file.read())
-# # print(file.read(5)) # or we can mention the number of characters we want to print
-# file.close()
-
-
-# print("------------")
-
-# # readline() >>> reads one line at a time
-# file = open("039_data.txt", "r")
-# print(file.readline())
-# print(file.readline())
-
-
-# # readlines() >>> returns all the lines as list of strings
-# file = open("039_data.txt", "r")
-# lines = file.readlines()
-# print(lines)
-# file.close()
+# rb, wb _ read binary, write binary >>> used for images, pdfs, audios etc
 
 
 
-
-# #read write append etc using "with open" >>> this will close the file resources even if an error occurs
-# with open("039_data.txt", "r") as file:
-#     data = file.read()
-# print(data)
-
-# with open("039_data.txt", "a") as file:
-#     file.write("\This is new line using append --- ")
-
-# #working with multiple files
-# with open("039_data.txt","r") as file1:
-#     with open("039_data1.txt", "r") as file2:
-#         data1 = file1.read()
-#         data2 = file2.read()
-
-# #cleaner way
-# with open("039_data.txt","r") as file1, open("039_data1.txt", "r") as file2:
-#         data1 = file1.read()
-#         data2 = file2.read()
+#Reading files
+#python provides three ways for this
 
 
+#read() >>> reads the entire file
+file = open("039_data.txt", "r")
+print(file.read())
+# print(file.read(5)) # or we can mention the number of characters we want to print
+file.close()
 
-# # os Module >>> The os module allows Python to interact with the operating system.
+
+print("------------")
+
+# readline() >>> reads one line at a time
+file = open("039_data.txt", "r")
+print(file.readline())
+print(file.readline())
+
+
+# readlines() >>> returns all the lines as list of strings
+file = open("039_data.txt", "r")
+lines = file.readlines()
+print(lines)
+file.close()
+
+
+
+
+#read write append etc using "with open" >>> this will close the file resources even if an error occurs
+with open("039_data.txt", "r") as file:
+    data = file.read()
+print(data)
+
+with open("039_data.txt", "a") as file:
+    file.write("\This is new line using append --- ")
+
+#working with multiple files
+with open("039_data.txt","r") as file1:
+    with open("039_data1.txt", "r") as file2:
+        data1 = file1.read()
+        data2 = file2.read()
+
+#cleaner way
+with open("039_data.txt","r") as file1, open("039_data1.txt", "r") as file2:
+        data1 = file1.read()
+        data2 = file2.read()
+
+
+
+# os Module >>> The os module allows Python to interact with the operating system.
 import os
-# os.mkdir("new_dir0") #to create a new directory
+os.mkdir("new_dir0") #to create a new directory
 
-# os.makedirs("new_dir1/sub_dir") #to create nested dirs
+os.makedirs("new_dir1/sub_dir") #to create nested dirs
 
-# print(os.listdir("new_dir1")) #tells us what is in the directory
+print(os.listdir("new_dir1")) #tells us what is in the directory
 
-# os.rmdir("new_dir0") #removes one dir if the directory is empty
+os.rmdir("new_dir0") #removes one dir if the directory is empty
 
-# os.removedirs("new_dir1/sub_dir")
+os.removedirs("new_dir1/sub_dir")
 
-# os.rename("039_new_file.txt","039newFile.txt" ) #change file name
+os.rename("039_new_file.txt","039newFile.txt" ) #change file name
+
+print(os.path.exists("000notes.txt")) #checks if the path is there - works for files as well as libraries
+
+print(os.path.isfile("000notes.txt")) #checks if it is a file
+
+print(os.path.isdir("main")) #check if it a folder
+
+os.remove("039_data3.txt") #removes files
 
 folder = "new"
 subfolder = "sub_new"
 filename = "file.txt"
-fullpath = os.path.join(folder, subfolder, filename)
-dir_path = os.path.dirname(fullpath)
+fullpath = os.path.join(folder, subfolder, filename) #makes a path - It joins different path components.
+dir_path = os.path.dirname(fullpath) #makes a dir only path without the files
 if not os.path.exists(dir_path):
     os.makedirs(dir_path)
     print(f"{dir_path}")
@@ -137,4 +145,86 @@ if not os.path.isfile(fullpath):
     with open(fullpath, 'w') as file:
         file.write("This is my file.txt")
         print(f"{fullpath}")
+
+print(os.path.basename(fullpath)) #extracts filename from the path
+print(os.path.abspath("000notes.txt")) #gets absolute path
+
+
+#With os, you often call functions like os.path.exists().
+#With pathlib, you work with a Path object and call methods on it.
+
+#PathLib
+from pathlib import Path
+
+print(Path.cwd()) #prints current working directory
+
+for item in Path(".").iterdir(): #prints every file or dir in the current directory(".")
+    print(item)
+
+for item in Path("opractice").iterdir(): #prints every file and dir in the "new" dir
+    print(item)
+
+Path("new_practice_folder").mkdir() #creates a new folder "new_practice_folder" >>> this can create an error if the dir already exists
+
+Path("new").mkdir(exist_ok= True) #exist_ok = True checks if there is a folder with this name
+
+Path("new1/new1_1/new1_1_1").mkdir(parents = True, exist_ok=True) #creates nested folders 
+
+
+print(Path("new").exists()) #checks it the path exists
+
+print(Path("new").is_dir()) #checks of the dir exists
+print(Path("000notes.txt").is_file()) #checks if the file exists
+
+Path("039newFile.txt").unlink() #deletes a file
+
+Path("jinga").rmdir() # >>> removes an empty dir
+
+
+# / operator in PathLib >>> it can mean go in this folder
+mainfol = Path("newmain1")
+subfol = mainfol / "subfol1"
+file = subfol / "file1.txt"
+
+path = Path("newmain")/("newsub")/("file.txt")
+
+print(path.parent) #works same as os.path.dirname()
+print(path.name) #works same as os.path.basename() >>> return file name at the end of the path
+
+print(Path("000notes.txt").resolve()) #gives absolute path
+
+print(path.stem) #gives file name without extension
+print(path.suffix) #gives only extension of the file
+
+
+
+#encoding >>> Encoding determines how characters are stored/read. with encoding u might see an error "UnicodeDecodeError" or characters may be printed incorrectly. For most modern files utf-8 encoding is good default
+with open("039_data.txt","r", encoding="utf-8") as file:
+    print(file.read())
+
+with open("039_file.txt","w+", encoding="utf-8") as file:
+    file.write("नमस्ते")
+
+with open("039_file.txt", "r", encoding = "utf-8") as file:
+    print(file.read())
+
+
+#Error handling with files
+try:    
+    with open("data.txt", "r") as file:
+        print(file.read())
+except:
+    print("File Not Found")
+
+
+
+#reading a file line by line >>> some files might be very large adn we dont want to load them in the memory as whole
+with open("039data.txt", "r") as file:
+    for line in file:
+        print(line.strip()) #strip removes unncessary spaces from the lines
+
+
+
+
+
 
