@@ -123,7 +123,7 @@ os.rmdir("new_dir0") #removes one dir if the directory is empty
 
 os.removedirs("new_dir1/sub_dir")
 
-os.rename("039_new_file.txt","039newFile.txt" ) #change file name
+os.rename("039_new_file.txt","039newFile.txt") #change file name
 
 print(os.path.exists("000notes.txt")) #checks if the path is there - works for files as well as libraries
 
