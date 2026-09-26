@@ -138,7 +138,7 @@ with open("040_students2.csv", "r", newline="") as file:
 with open("040_students2.csv", "r") as file:
     reader = csv.DictReader(file)
     for row in reader:
-        if row["age"] == "":
+        if row["age"].strip() == "":
             row["age"] = "Unknown"
         print(row)
 
@@ -207,3 +207,100 @@ with open("large.csv", "r") as file:
             age = int(row["age"])
             if age >= 18:
                 print(row["name"])
+
+
+#Q1 : Write a Python program that: >>> on students.csv
+# 1. Imports the csv module.
+# 2. Opens students.csv in read mode.
+# 3. Uses csv.reader().
+# 4. Skips the header.
+# 5. Prints each student’s name, age, and course in this format:
+# Adnan - 22 - Python
+# Ali - 21 - Java
+# Sara - 23 - SQL
+
+import csv
+with open("students.csv","r") as file:
+    reader = csv.reader(file)
+    next(reader, None)
+    for row in reader:
+        print(f"{row[0]} - {row[1]} - {row[2]}")
+
+#Q2 — Filter CSV Data >>>employees.csv
+# Write a Python program that:
+# 1. Uses csv.DictReader().
+# 2. Reads the CSV file.
+# 3. Finds employees whose department is IT.
+# 4. Prints their names.
+# 5. Calculates and prints the total salary of IT employees.
+# Output: 
+# Adnan
+# Sara
+# Total IT Salary: 110000
+
+import csv
+with open("employees.csv", "r") as file:
+    reader = csv.DictReader(file)
+    salary = 0
+    for row in reader:
+        if row["department"] == "IT":
+            print(row["name"])
+            salary += int(row["salary"])
+    print(f"Total IT Salary: {salary}")
+
+
+#Write a Python program that: >>> students.csv
+# 1. Reads the CSV using csv.DictReader().
+# 2. Finds the student named Ali.
+# 3. Changes Ali’s marks from 62 to 80.
+# 4. Stores the modified rows.
+# 5. Rewrites the same CSV file using csv.DictWriter().
+# 6. Preserves the header and all other student records.
+#>>> after update: 
+# name,age,marks
+# Adnan,22,75
+# Ali,21,80
+# Sara,23,88
+# John,22,55
+
+students = []
+with open("students.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        if row["name"] == "Ali":
+            row["marks"] = 80
+        students.append(row)
+
+with open("students.csv", "w", newline="") as file:
+    fieldnames = ["name", "age", "marks"]
+    writer = csv.DictWriter(file, fieldnames= fieldnames)
+    writer.writeheader()
+    writer.writerows(students)
+
+#Q4 - Write a Python program that: >>> sales.csv
+# 1. Uses csv.DictReader().
+# 2. Reads every row.
+# 3. Calculates the total value of each product: price × quantity
+# 4. Prints each product and its total value.
+# 5. Calculates the total sales value of all products.
+# 6. Finds the product with the highest total value.
+# 7. Calculates the total sales value for the Electronics category only.
+
+
+with open("sales.csv", "r") as file:
+    reader = csv.DictReader(file)
+    sales = 0
+    elec_sales = 0
+    highest_value = 0
+    for row in reader:
+        total_value = int(row["price"]) * int(row["quantity"])
+        print(f"{row["product"]} - {total_value}")
+        if highest_value < total_value:
+            hvp = row["product"]
+            highest_value = total_value
+        sales += total_value
+        if row["category"] == "Electronics":
+            elec_sales += total_value
+    print(f"Total Sales: {sales}")
+    print(f"Highest Value Product: {hvp}")
+    print(f"Electronic sales: {elec_sales}")
