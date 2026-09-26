@@ -1,7 +1,13 @@
-import csv
-with open("040_students2.csv", "r") as file:
-    reader = csv.DictReader(file)
-    for row in reader:
-        if row["age"] == "":
-            row["age"] = "Unknown"
-        print(row)
+import json
+
+student = {
+    "name": "Adnan",
+    "age": 20,
+    "course": "Python"
+}
+
+with open("041_students.json", "w") as file:
+    json.dump(student, file, indent=4)
+
+data = json.dumps(student)
+print(type(data))
