@@ -1,0 +1,33 @@
+{
+    "company": "TechCorp",
+    "employees": [
+        {
+            "id": 1,
+            "name": "Adnan",
+            "department": "IT",
+            "salary": 60000,
+            "skills": ["Python", "SQL"]
+        },
+        {
+            "id": 2,
+            "name": "Ali",
+            "department": "HR",
+            "salary": 45000,
+            "skills": ["Communication", "Excel"]
+        },
+        {
+            "id": 3,
+            "name": "Sara",
+            "department": "IT",
+            "salary": 75000,
+            "skills": ["Python", "Java", "SQL"]
+        },
+        {
+            "id": 4,
+            "name": "John",
+            "department": "Sales",
+            "salary": 50000,
+            "skills": ["Excel", "Marketing"]
+        }
+    ]
+}

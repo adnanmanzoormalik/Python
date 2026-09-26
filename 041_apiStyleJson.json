@@ -1,0 +1,15 @@
+{
+    "status": "success",
+    "users": [
+        {
+            "id": 1,
+            "name": "Adnan",
+            "age": 22
+        },
+        {
+            "id": 2,
+            "name": "Ali",
+            "age": 13
+        }
+    ]
+}
