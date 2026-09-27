@@ -195,6 +195,31 @@
 # 7. Calculates the total salary of only the IT employees.
 # 8. Prints all employees who have "Python" in their skills.
 # 9. Prints the average salary of all employees.
+import json
+with open("employees.json", "r") as file:
+    data = json.load(file)
+    print(data["company"])
+    salary = 0
+    h_sal = 0
+    it_sal = 0
+    no_of_emp = 0
+    for d in data["employees"]:
+        print(d["name"]) 
+        salary += d["salary"]
+        no_of_emp += 1
+        if d["salary"] > h_sal:
+            h_sal = d["salary"]
+    for d in data["employees"]:  
+        if d["department"] == "IT":
+            it_sal += d["salary"]
+            print(d["name"])
+        
+    for d in data["employees"]:  
+        for d1 in d["skills"]:
+            if d1 in "Python":
+                print(d["name"])
+    print(salary)
+    print(h_sal)
 
-
-    
+    print(salary/no_of_emp)
+        
