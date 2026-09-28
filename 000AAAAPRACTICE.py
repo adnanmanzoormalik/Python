@@ -1,13 +1,11 @@
-import json
+import requests
+import requests
 
-student = {
-    "name": "Adnan",
-    "age": 20,
-    "course": "Python"
+url = "https://api.example.com/users"
+
+params = {
+    "city": "Srinagar"
 }
 
-with open("041_students.json", "w") as file:
-    json.dump(student, file, indent=4)
-
-data = json.dumps(student)
-print(type(data))
+response = requests.get(url, params=params)
+print(response)

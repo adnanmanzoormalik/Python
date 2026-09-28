@@ -1,0 +1,458 @@
+# Python Day 6 Part 2 — APIs
+# Phases 1–3
+
+==================================================
+PHASE 1 — API FUNDAMENTALS
+==================================================
+
+1. WHAT IS AN API?
+
+API = Application Programming Interface
+
+An API allows one program to communicate with another program.
+
+Example:
+
+Python Program
+      ↓
+   API Request
+      ↓
+     Server
+      ↓
+   API Response
+      ↓
+Python Program
+
+APIs commonly allow programs to exchange data without directly accessing
+the internal implementation of another application.
+
+Example API response:
+
+{
+    "city": "Srinagar",
+    "temperature": 25,
+    "condition": "Sunny"
+}
+
+
+2. CLIENT VS SERVER
+
+CLIENT:
+The program that sends a request.
+
+Examples:
+- Python program
+- Web browser
+- Mobile application
+- React application
+
+SERVER:
+The system that receives the request, processes it, and sends a response.
+
+Example:
+
+Python Program  →  API Server
+                 Request
+
+Python Program  ←  API Server
+                 Response
+
+In this example:
+Client = Python program
+Server = API server
+
+
+3. REQUEST AND RESPONSE
+
+REQUEST:
+Information sent from the client to the server.
+
+A request can contain:
+- URL
+- HTTP method
+- Parameters
+- Headers
+- Body
+
+Example:
+
+GET https://api.example.com/users
+
+
+RESPONSE:
+Information sent from the server back to the client.
+
+A response can contain:
+- Status code
+- Headers
+- Response body
+
+Example response body:
+
+{
+    "id": 1,
+    "name": "Adnan"
+}
+
+
+4. HTTP BASICS
+
+HTTP = HyperText Transfer Protocol
+
+HTTP is commonly used for communication between clients and web servers.
+
+Common HTTP methods:
+
+GET     → Get/read data
+POST    → Send/create data
+PUT     → Replace/update data
+PATCH   → Partially update data
+DELETE  → Delete data
+
+Examples:
+
+GET /users
+POST /users
+PUT /users/10
+PATCH /users/10
+DELETE /users/10
+
+
+==================================================
+PHASE 2 — URL, ENDPOINT, PARAMETERS & HEADERS
+==================================================
+
+5. URL
+
+URL = Uniform Resource Locator
+
+A URL tells the client where to send a request.
+
+Example:
+
+https://api.example.com/users
+
+Breakdown:
+
+https://
+→ Protocol
+
+api.example.com
+→ Domain
+
+/users
+→ Path
+
+
+6. ENDPOINT
+
+An endpoint is a specific API location used to access a resource
+or perform an operation.
+
+Example:
+
+https://api.example.com/users
+https://api.example.com/products
+https://api.example.com/orders
+
+These are different endpoints.
+
+An endpoint can contain an ID:
+
+https://api.example.com/users/25
+
+Here:
+
+25 = User ID
+
+
+7. PARAMETERS
+
+Parameters provide additional information to an API.
+
+There are different types of parameters.
+
+
+QUERY PARAMETERS
+
+Query parameters are added after ?.
+
+Example:
+
+https://api.example.com/users?city=Srinagar
+
+city=Srinagar
+→ Query parameter
+
+Multiple query parameters:
+
+https://api.example.com/products?category=phones&brand=apple
+
+? → Starts query parameters
+& → Separates multiple parameters
+
+Parameters:
+
+category=phones
+brand=apple
+
+
+PATH PARAMETERS
+
+A value can be included directly in the URL path.
+
+Example:
+
+https://api.example.com/users/25
+
+25 = Path parameter
+
+Conceptually:
+
+/users/{user_id}
+
+Examples:
+
+/users/10
+/users/25
+/users/50
+
+
+QUERY PARAMETER VS PATH PARAMETER
+
+/users/25
+→ Path parameter
+
+/users?id=25
+→ Query parameter
+
+
+8. HEADERS
+
+Headers provide additional information about an HTTP request
+or response.
+
+They are metadata.
+
+Common headers:
+
+Content-Type:
+Tells the server what format the request body contains.
+
+Example:
+
+Content-Type: application/json
+
+
+Accept:
+Tells the server what response format the client wants.
+
+Example:
+
+Accept: application/json
+
+
+Authorization:
+Used to provide authentication information.
+
+Example:
+
+Authorization: Bearer TOKEN
+
+
+A request can conceptually contain:
+
+REQUEST
+│
+├── URL
+├── Method
+├── Parameters
+├── Headers
+└── Body
+
+
+==================================================
+PHASE 3 — STATUS CODES & JSON RESPONSES
+==================================================
+
+9. HTTP STATUS CODES
+
+HTTP status codes tell the client what happened to the request.
+
+Main categories:
+
+1xx → Informational
+2xx → Success
+3xx → Redirection
+4xx → Client error
+5xx → Server error
+
+
+IMPORTANT STATUS CODES:
+
+200 → OK
+Request was successful.
+
+
+201 → Created
+A new resource was successfully created.
+
+
+204 → No Content
+Request succeeded, but there is no response body.
+
+
+400 → Bad Request
+The request is invalid.
+
+
+401 → Unauthorized
+Authentication is missing or invalid.
+
+
+403 → Forbidden
+The server understood the request but refuses access.
+
+
+404 → Not Found
+The requested resource does not exist.
+
+
+500 → Internal Server Error
+Something went wrong on the server.
+
+
+503 → Service Unavailable
+The server is temporarily unable to handle the request.
+
+
+Easy way to remember:
+
+2xx → Request worked
+4xx → Problem with the client's request
+5xx → Problem on the server
+
+
+10. JSON RESPONSES
+
+JSON = JavaScript Object Notation
+
+APIs commonly use JSON to exchange data.
+
+Example JSON:
+
+{
+    "name": "Adnan",
+    "age": 22,
+    "city": "Srinagar"
+}
+
+JSON looks similar to a Python dictionary.
+
+Python:
+
+data = {
+    "name": "Adnan",
+    "age": 22,
+    "city": "Srinagar"
+}
+
+Important:
+
+JSON is a data format.
+Python dictionary is a Python data structure.
+
+
+JSON can contain lists:
+
+[
+    {
+        "id": 1,
+        "name": "Adnan"
+    },
+    {
+        "id": 2,
+        "name": "Rahul"
+    }
+]
+
+
+After converting JSON into Python data:
+
+data[0]["name"]
+
+→ Adnan
+
+
+JSON can also be nested:
+
+{
+    "name": "Adnan",
+    "address": {
+        "city": "Srinagar",
+        "country": "India"
+    }
+}
+
+Access nested data in Python:
+
+data["address"]["city"]
+
+→ Srinagar
+
+
+==================================================
+COMPLETE API FLOW
+==================================================
+
+Client
+   ↓
+Creates HTTP Request
+   ↓
+URL + Method + Parameters + Headers + Body
+   ↓
+API Server
+   ↓
+Processes Request
+   ↓
+HTTP Response
+   ↓
+Status Code + Headers + JSON/Data
+   ↓
+Client processes the response
+
+
+Example:
+
+GET https://api.example.com/users/25?details=true
+
+Request:
+
+Method:
+GET
+
+URL:
+https://api.example.com/users/25?details=true
+
+Path parameter:
+25
+
+Query parameter:
+details=true
+
+Header:
+Accept: application/json
+
+
+Response:
+
+Status Code:
+200
+
+Body:
+
+{
+    "id": 25,
+    "name": "Adnan",
+    "city": "Srinagar"
+}
