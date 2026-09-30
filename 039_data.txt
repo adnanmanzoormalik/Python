@@ -1,3 +1,2 @@
 This is being written from python program
-This is new line appended by python program\This is new line using append --- 
-नमस्ते
+This is new line appended by python program\This is new line using append
