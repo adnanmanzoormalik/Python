@@ -187,6 +187,7 @@
 
 
 
+
 # 15. DEBUGGING FILE OPERATIONS
 # Common file-related problems:
 # - Wrong filename
@@ -230,3 +231,151 @@ with open("039_data.txt", "r") as file:
 # Python reads it as: "25"
 # Convert it if necessary: number = int(number)
 
+
+# 16. DEBUGGING API CALLS
+# API debugging means checking each stage of the API request.
+
+# Common problems:
+# - Wrong URL
+# - Wrong HTTP method
+# - Wrong parameters
+# - Missing headers
+# - Invalid authentication
+# - Wrong API key
+# - Server error
+# - Timeout
+# - Unexpected JSON structure
+
+# Example:
+import requests
+url = "https://google.com"
+response = requests.get(url)
+# Debug:
+# print(response.status_code)
+# print(response.text)
+# print(response.headers)
+
+# If response contains JSON:
+data = response.json()
+print(data)
+print(type(data))
+
+# You can inspect:
+# print(data.keys())
+
+# Common HTTP status codes:
+# 200 → Success
+# 400 → Bad Request
+# 401 → Unauthorized
+# 403 → Forbidden
+# 404 → Not Found
+# 500 → Server Error
+
+# Example problem:
+data = response.json()
+print(data["name"])
+
+# If: KeyError: 'name'
+# don't assume the API is wrong.
+# First inspect:
+print(data)
+# The actual response may have:
+# {
+#     "username": "Adnan"
+# }
+
+# instead of:
+# {
+#     "name": "Adnan"
+# }
+
+
+# 17. DEBUGGING DATA PROCESSING SCRIPTS
+# Typical data-processing pipeline:
+# Read
+#  ↓
+# Validate
+#  ↓
+# Clean
+#  ↓
+# Transform
+#  ↓
+# Calculate
+#  ↓
+# Save
+# The most important rule:
+# Find the point where the data FIRST becomes incorrect.
+
+# Example:
+numbers = [10, 20, 30, 40]
+total = sum(numbers)
+print("Total:", total)
+average = total / 2
+print("Average:", average)
+
+# If the expected average is 25 but the program gives 50:
+# Check each step:
+# print("Numbers:", numbers)
+# print("Total:", total)
+# print("Count:", len(numbers))
+# print("Average:", average)
+
+# The problem is: average = total / 2
+# It should be: average = total / len(numbers)
+# Debugging data processing is about checking intermediate results, not just the final result.
+
+
+# 18. DEBUGGING DATA TYPE PROBLEMS
+# A data type problem happens when a variable has a different type than expected.
+# Common types: int, float, str, list, tuple, set, dict, bool, None
+
+# Always check:
+# print(variable)
+# print(type(variable))
+
+# Example:
+age = input("Enter age: ")
+print(type(age))
+# input() always returns a string.
+
+# So:
+age = input("Enter age: ")
+# gives: "20"
+# not: 20
+
+# Correct:
+age = int(input("Enter age: "))
+# Another example:
+
+numbers = "12345"
+print(sum(numbers))
+
+# Problem: numbers is a string.
+# Check:
+# print(numbers)
+# print(type(numbers))
+
+# For a list:
+# numbers = [1, 2, 3, 4, 5]
+# print(sum(numbers))
+
+# Important example:
+def calculate_total(a, b):
+    total = a + b
+result = calculate_total(10, 20)
+print(result)
+
+# Output: None
+# Why?
+# The function doesn't have return.
+
+# Correct:
+def calculate_total(a, b):
+    total = a + b
+    return total
+
+# Important:
+# None means there is no returned value.
+# Debug unexpected types using:
+# print(variable)
+# print(type(variable))
